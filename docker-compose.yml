@@ -50,21 +50,6 @@ services:
     - EMAIL
 
 
-  ddns:
-    # This provides a ddclient dynamic dns updating cron which is as simple as running it
-    # and editing the ddns/config/ddclient.conf file
-    # https://github.com/linuxserver/docker-ddclient
-    image: linuxserver/ddclient
-    restart: always
-    container_name: ddns
-    volumes:
-    - ${PWD}/ddns:/config
-    environment:
-    - PUID
-    - PGID
-    - TZ
-
-
   fail2ban:
     # Implements fail2ban functionality, banning ips that 
     # try to bruteforce your vault
