@@ -12,8 +12,8 @@
   }
 
   # Uncomment only one of the 2 lines. Depending if you provide your own cert or request one from Let's Encrypt
-  # tls {$SSLCERTIFICATE} {$SSLKEY}
-  tls {$EMAIL}
+  tls /etc/caddy/cert.crt /etc/caddy/key.pem
+  # tls {$EMAIL}
 
   encode zstd gzip
 
