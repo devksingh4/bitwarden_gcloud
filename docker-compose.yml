@@ -36,6 +36,8 @@ services:
     container_name: proxy
     depends_on:
     - bitwarden
+    environment:
+    - LOG_FILE=/data/caddy.log
     volumes:
     - ${PWD}/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
     - ${PWD}/caddy/cert.crt:/etc/caddy/cert.crt:ro
